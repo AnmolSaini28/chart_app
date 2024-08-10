@@ -13,12 +13,12 @@ class ChartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: const Color(0xffB66FFF),
         foregroundColor: Colors.black,
         elevation: 10,
         centerTitle: true,
         leading: IconButton(onPressed: (){context.go('/');}, icon: const Icon(Icons.arrow_back)),
-        title: const Text('City-wise Doctor Count'),
+        title: const Text('City-wise Doctor Count', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
       ),
       body: FutureBuilder<List<ChartData>>(
         future: apiService.fetchChartData(),
