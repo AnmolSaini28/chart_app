@@ -8,11 +8,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
-        foregroundColor: Colors.black,
-        elevation: 10,
-        centerTitle: true,
-        title: const Text('Home Screen', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+          backgroundColor: Colors.green,
+          foregroundColor: Colors.black,
+          elevation: 10,
+          centerTitle: true,
+          title: const Text('Chart App Home')
       ),
       body: Center(
         child: ElevatedButton(

@@ -1,17 +1,19 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:chart_app/models/chart_data.dart';
+import 'package:http/http.dart' as http;
 
 class ApiService {
-  // API is work only for 5 minutes (Don't Know why)
-  static const String baseUrl = 'https://data.gov.in/resource/0cde42d3-5f49-4d2a-996c-4dfc4b2e2596';
-  static const String apiKey = '579b464db66ec23bdd0000016d8f25abae1041cb632f0af91477b5ee';
+  static const String apiUrl = "https://api.data.gov.in/resource/8eede3a2-1652-49eb-bd7f-48ae3ea7a11e?api-key=579b464db66ec23bdd0000016d8f25abae1041cb632f0af91477b5ee&format=json";
 
-  Future<List<dynamic>> fetchChartData() async {
-    final response = await http.get(Uri.parse('$baseUrl?api-key=$apiKey&format=json'));
+  Future<List<ChartData>> fetchChartData() async {
+    final response = await http.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
-      final jsonData = json.decode(response.body);
-      return jsonData['records'];
+      final data = json.decode(response.body);
+      List<ChartData> chartData = List<ChartData>.from(
+        data['records'].map((item) => ChartData.fromJson(item)),
+      );
+      return chartData;
     } else {
       throw Exception('Failed to load data');
     }
