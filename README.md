@@ -1,16 +1,1 @@
-# chart_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A simple flutter app with a chart(pick any chart from https://visualize.data.gov.in/ using API from https://www.data.gov.in/). Use go_router code for navigation and riverpod for state management. The API is work only for 5 minutes(don't know what's the reason).
