@@ -12,13 +12,13 @@ class ChartWidget extends StatelessWidget {
     // Convert ChartData to chart series
     List<charts.Series<ChartData, String>> series = [
       charts.Series(
-        id: 'Doctors',
+        id: 'Crude Oil',
         data: data,
-        domainFn: (ChartData chartData, _) => chartData.cityName,
-        measureFn: (ChartData chartData, _) => chartData.doctorCount,
+        domainFn: (ChartData chartData, _) => chartData.refineryName,
+        measureFn: (ChartData chartData, _) => chartData.crudeOilProcessed,
         colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
         labelAccessorFn: (ChartData chartData, _) =>
-        chartData.doctorCount.toString(),
+            chartData.crudeOilProcessed.toString(),
       )
     ];
 
@@ -27,7 +27,7 @@ class ChartWidget extends StatelessWidget {
       child: Column(
         children: [
           const Text(
-            'Number of Doctors in Cities',
+            'Monthly Crude Oil Processed by Refineries',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Expanded(
@@ -37,11 +37,11 @@ class ChartWidget extends StatelessWidget {
               barRendererDecorator: charts.BarLabelDecorator<String>(),
               domainAxis: const charts.OrdinalAxisSpec(),
               behaviors: [
-                charts.ChartTitle('Cities',
+                charts.ChartTitle('Refineries',
                     behaviorPosition: charts.BehaviorPosition.bottom,
                     titleOutsideJustification:
                     charts.OutsideJustification.middleDrawArea),
-                charts.ChartTitle('Number of Doctors',
+                charts.ChartTitle('Crude Oil Processed (MT)',
                     behaviorPosition: charts.BehaviorPosition.start,
                     titleOutsideJustification:
                     charts.OutsideJustification.middleDrawArea),

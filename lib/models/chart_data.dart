@@ -1,13 +1,13 @@
 class ChartData {
-  final String cityName;
-  final int doctorCount;
+  final String refineryName;
+  final double crudeOilProcessed;
 
-  ChartData({required this.cityName, required this.doctorCount});
+  ChartData({required this.refineryName, required this.crudeOilProcessed});
 
   factory ChartData.fromJson(Map<String, dynamic> json) {
     return ChartData(
-      cityName: json['cityname'], // Field for the city name
-      doctorCount: int.parse(json['doctorcount'].toString()), // Field for the number of doctors
+      refineryName: json['oil_companies_'] ?? 'Unknown', // Adjust the field name based on the API response
+      crudeOilProcessed: double.tryParse(json['quantity_000_metric_tonnes_'].toString()) ?? 0.0, // Adjust the field name based on the API response
     );
   }
 }

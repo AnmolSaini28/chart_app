@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen>
                       SlideTransition(
                         position: _slideAnimation,
                         child: const Text(
-                          'Type Below to Continue',
+                          'Type Below to explore data',
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.w500),
                         ),

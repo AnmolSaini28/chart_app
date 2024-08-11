@@ -17,8 +17,16 @@ class ChartScreen extends StatelessWidget {
         foregroundColor: Colors.black,
         elevation: 10,
         centerTitle: true,
-        leading: IconButton(onPressed: (){context.go('/');}, icon: const Icon(Icons.arrow_back)),
-        title: const Text('City-wise Doctor Count', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
+        leading: IconButton(
+          onPressed: () {
+            context.go('/');
+          },
+          icon: const Icon(Icons.arrow_back),
+        ),
+        title: const Text(
+          'Crude Oil Processed by Refineries',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+        ),
       ),
       body: FutureBuilder<List<ChartData>>(
         future: apiService.fetchChartData(),
